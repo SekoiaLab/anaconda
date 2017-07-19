@@ -36,6 +36,7 @@ type Tweet struct {
 	Source                      string                 `json:"source"`
 	Scopes                      map[string]interface{} `json:"scopes"`
 	Text                        string                 `json:"text"`
+	ExtendedTweet               ExtendedTweet          `json:"extended_tweet"`
 	Truncated                   bool                   `json:"truncated"`
 	User                        User                   `json:"user"`
 	WithheldCopyright           bool                   `json:"withheld_copyright"`
@@ -44,6 +45,13 @@ type Tweet struct {
 
 	//Geo is deprecated
 	//Geo                  interface{} `json:"geo"`
+}
+
+type ExtendedTweet struct {
+	FullText         string `json:"full_text"`
+	DisplayTextRange []int  `json:"display_text_range"`
+	Entities         Entities
+	ExtentedEntities Entities
 }
 
 // CreatedAtTime is a convenience wrapper that returns the Created_at time, parsed as a time.Time struct
