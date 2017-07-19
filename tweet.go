@@ -9,6 +9,7 @@ type Tweet struct {
 	Contributors                []int64                `json:"contributors"`
 	Coordinates                 *Coordinates           `json:"coordinates"`
 	CreatedAt                   string                 `json:"created_at"`
+	DisplayTextRange            []int                  `json:"display_text_range"`
 	Entities                    Entities               `json:"entities"`
 	ExtendedEntities            Entities               `json:"extended_entities"`
 	FavoriteCount               int                    `json:"favorite_count"`
@@ -36,6 +37,7 @@ type Tweet struct {
 	Source                      string                 `json:"source"`
 	Scopes                      map[string]interface{} `json:"scopes"`
 	Text                        string                 `json:"text"`
+	FullText                    string                 `json:"full_text"`
 	ExtendedTweet               ExtendedTweet          `json:"extended_tweet"`
 	Truncated                   bool                   `json:"truncated"`
 	User                        User                   `json:"user"`
